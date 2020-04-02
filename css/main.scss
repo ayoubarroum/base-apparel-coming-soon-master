@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap');
+$colors :(desat-red: hsl(0, 36%, 70%),
+    soft-red: hsl(0, 93%, 68%),
+    dark-grayish-red: hsl(0, 6%, 24%),
+
+);
+$gradient1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$gradient2:linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+$font:'Josefin Sans',
+sans-serif;
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+$desktop : 840px;
+
+@mixin desktop {
+    @media (min-width:$desktop) {
+        @content;
+    }
+
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+    background-image: $gradient1;
+}
+
+body {
+    @include desktop {
+        display: grid;
+        background-image: url("../images/bg-pattern-desktop.svg");
+        //ELACH HADY KHDMAT UNDERSTAAAAAND!!! 🔥 🔥 🔥 
+        
+
+        grid-template-areas:
+            "header image_section"
+            "announce_section image_section"
+            "footer footer"
+
+        ;
+    }
+
+    header {
+
+        grid-area: header;
+
+        img {
+            padding: 24px;
+            width: 100px;
+
+            @include desktop {
+                z-index: 1;
+                position: absolute;
+                margin-left: 160px;
+                padding-top: 34px;
+            }
+        }
+    }
+
+    main {
+        text-align: center;
+        
+        
+
+        #model_img {
+            .model-mobile {
+                grid-area: image_section;
+
+                @include desktop {
+                    display: none;
+
+                }
+            }
+
+            .model-desktop {
+                display: none;
+
+
+                @include desktop {
+                    display: unset;
+                    float: right;
+                    width: 39.7%;
+                }
+            }
+        }
+
+        #announce {
+            width: 90%;
+            margin: auto;
+            margin-top: 60px;
+            grid-area: announce_section;
+
+            @include desktop {
+                text-align: left;
+                margin-right: 83px;
+                margin-top: 14%;
+            }
+
+            h1 {
+                text-transform: uppercase;
+                font-size: 45px;
+                width: 80%;
+                letter-spacing: .2em;
+                text-align: center;
+                margin: auto;
+                color: color(desat-red);
+                font-weight: 300;
+
+                @include desktop {
+                    text-align: left;
+                    width: 59%;
+                    font-size: 4.2em;
+                    margin-left: 0;
+                }
+
+                strong {
+                    color: black;
+                }
+
+            }
+
+            p {
+                color: color(desat-red);
+                margin-bottom: 36px;
+                line-height: 1.4;
+
+                @include desktop {
+                    width: 27em;
+                    line-height: 1.6;
+                }
+            }
+
+            form {
+                div input {
+                    -webkit-appearance: none;
+                    border: 1px solid color(desat-red);
+                    border-radius: 20px;
+                    padding: 14px;
+                    padding-left: 24px;
+                    width: 91%;
+
+                    @include desktop {
+                        width: 39%;
+                    }
+                }
+
+                ::placeholder {
+                    color: color(desat-red);
+
+                }
+
+                div .error_icon {
+                    display: none;
+                    position: absolute;
+                    right: 85px;
+                    bottom: 115px;
+                }
+
+                button {
+                    -webkit-appearance: none;
+                    padding: 11px 26px;
+                    border: 1px;
+                    border-radius: 30px;
+                    position: absolute;
+                    right: 7px;
+                    bottom: 104px;
+                    background-image: $gradient2;
+                    box-shadow: 1px 3px 33px #ee8c8c;
+
+                    @include desktop {
+                        
+                        left: 43%;
+                        bottom: 82px;
+                    }
+
+                    img {
+                        padding: 1.5px;
+                    }
+                }
+            }
+
+
+
+        }
+    }
+
+    footer {
+        grid-area: footer;
+
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+            margin-top: 54px;
+
+            @include desktop {
+                margin-top: 0;
+            }
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    }
+}

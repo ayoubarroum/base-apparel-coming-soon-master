@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap");
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+  background-image: linear-gradient(135deg, white, #fff5f5);
+}
+
+@media (min-width: 840px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    background-image: url("../images/bg-pattern-desktop.svg");
+        grid-template-areas: "header image_section" "announce_section image_section" "footer footer";
+  }
+}
+
+body header {
+  grid-area: header;
+}
+
+body header img {
+  padding: 24px;
+  width: 100px;
+}
+
+@media (min-width: 840px) {
+  body header img {
+    z-index: 1;
+    position: absolute;
+    margin-left: 160px;
+    padding-top: 34px;
+  }
+}
+
+body main {
+  text-align: center;
+}
+
+body main #model_img .model-mobile {
+  grid-area: image_section;
+}
+
+@media (min-width: 840px) {
+  body main #model_img .model-mobile {
+    display: none;
+  }
+}
+
+body main #model_img .model-desktop {
+  display: none;
+}
+
+@media (min-width: 840px) {
+  body main #model_img .model-desktop {
+    display: unset;
+    float: right;
+    width: 39.7%;
+  }
+}
+
+body main #announce {
+  width: 90%;
+  margin: auto;
+  margin-top: 60px;
+  grid-area: announce_section;
+}
+
+@media (min-width: 840px) {
+  body main #announce {
+    text-align: left;
+    margin-right: 83px;
+    margin-top: 14%;
+  }
+}
+
+body main #announce h1 {
+  text-transform: uppercase;
+  font-size: 45px;
+  width: 80%;
+  letter-spacing: .2em;
+  text-align: center;
+  margin: auto;
+  color: #ce9797;
+  font-weight: 300;
+}
+
+@media (min-width: 840px) {
+  body main #announce h1 {
+    text-align: left;
+    width: 59%;
+    font-size: 4.2em;
+    margin-left: 0;
+  }
+}
+
+body main #announce h1 strong {
+  color: black;
+}
+
+body main #announce p {
+  color: #ce9797;
+  margin-bottom: 36px;
+  line-height: 1.4;
+}
+
+@media (min-width: 840px) {
+  body main #announce p {
+    width: 27em;
+    line-height: 1.6;
+  }
+}
+
+body main #announce form div input {
+  -webkit-appearance: none;
+  border: 1px solid #ce9797;
+  border-radius: 20px;
+  padding: 14px;
+  padding-left: 24px;
+  width: 91%;
+}
+
+@media (min-width: 840px) {
+  body main #announce form div input {
+    width: 39%;
+  }
+}
+
+body main #announce form ::-webkit-input-placeholder {
+  color: #ce9797;
+}
+
+body main #announce form :-ms-input-placeholder {
+  color: #ce9797;
+}
+
+body main #announce form ::-ms-input-placeholder {
+  color: #ce9797;
+}
+
+body main #announce form ::placeholder {
+  color: #ce9797;
+}
+
+body main #announce form div .error_icon {
+  display: none;
+  position: absolute;
+  right: 85px;
+  bottom: 115px;
+}
+
+body main #announce form button {
+  -webkit-appearance: none;
+  padding: 11px 26px;
+  border: 1px;
+  border-radius: 30px;
+  position: absolute;
+  right: 7px;
+  bottom: 104px;
+  background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  -webkit-box-shadow: 1px 3px 33px #ee8c8c;
+          box-shadow: 1px 3px 33px #ee8c8c;
+}
+
+@media (min-width: 840px) {
+  body main #announce form button {
+    left: 43%;
+    bottom: 82px;
+  }
+}
+
+body main #announce form button img {
+  padding: 1.5px;
+}
+
+body footer {
+  grid-area: footer;
+}
+
+body footer .attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 54px;
+}
+
+@media (min-width: 840px) {
+  body footer .attribution {
+    margin-top: 0;
+  }
+}
+
+body footer .attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=main.css.map */
